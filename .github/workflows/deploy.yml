@@ -3,7 +3,7 @@ name: Deploy React app to S3
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 jobs:
   deploy:
