@@ -19,14 +19,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Set up Node.js (v16 - fix OpenSSL issue)
         uses: actions/setup-node@v4
         with:
-          node-version: '17'
-
-      # ✅ Fix the OpenSSL error (apply globally to all steps)
-      - name: Fix OpenSSL issue
-        run: echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV
+          node-version: '16'
 
       - name: Install dependencies
         run: npm install
